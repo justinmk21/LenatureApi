@@ -9,3 +9,5 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    search_fields = ['name']
+    ordering_fields = ['type', 'status']
