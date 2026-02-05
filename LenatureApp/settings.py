@@ -14,7 +14,8 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,12 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^*l7%d1jp%j#wg!evkximm@%0tstwun=z&9o+*24n=-jttg7w('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
-# Load environment variables from .env file
-load_dotenv()
+ALLOWED_HOSTS = ["34.71.229.132", "localhost", "127.0.0.1"]
 
 # Cloudinary configuration
 CLOUDINARY_STORAGE = {
@@ -47,6 +45,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +56,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'Lenature',
     'cloudinary',
-    'cloudinary_storage',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
